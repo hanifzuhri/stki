@@ -4,7 +4,6 @@
 <td>Judul</td>
 <td>Isi</td>
 <td>Url</td>
-<td>Tindakan</td>
 
 </tr>
 <?php
@@ -15,16 +14,17 @@ $query = "SELECT * FROM berita";
 $result = mysqli_query($koneksi,$query);
 $numrows = mysqli_num_rows($result);
 $no=1;
-while($berita = mysqli_fetch_array($result)){  
+while($row = mysqli_fetch_array($result)){  
 echo "<tr>";
 
-echo "<td><font color=blue></font>".$berita['id']."<br></td>"; 
-echo "<td><font color=blue></font>".$berita['judul']."<br></td>"; 
-echo "<td><font color=blue></font>".$berita['isi']."<br></td>"; 
-echo "<td><font color=blue></font>".$berita['url']."<br></td>";
-echo "<td>";
-echo "<a href='form-edit.php?id=".$berita['id']."'>Edit</a>";
-echo "</td>";
+$id1 = $row['id'];
+$judul1 = $row['judul'];
+$isi1 = $row['isi'];
+$url1 = $row['url'];
+echo "<td><font color=blue></font>" .  $id1 . "<br></td>"; 
+echo "<td><font color=blue></font>" .  $judul1 . "<br></td>"; 
+echo "<td><font color=blue></font>" .  $isi1 . "<br></td>"; 
+echo "<td><font color=blue></font>" .  $url1 . "<br></td>"; 
 echo "</tr>";
 $no++;
 }

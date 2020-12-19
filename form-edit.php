@@ -43,7 +43,7 @@ if( mysqli_num_rows($query) < 1 ){
 		</p>
 		<p>
 			<label for="alamat">Isi </label>
-			<textarea name="isi"><?php echo $berita['isi'] ?></textarea>
+			<textarea name="isi" cols="100" rows="10" tabindex="4"></><?php echo $berita['isi'] ?></textarea>
 		</p>
 		<p>
 			<label for="sekolah_asal">URL </label>
